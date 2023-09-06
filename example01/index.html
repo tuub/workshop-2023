@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Formular mit PHP 1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <h1>Formular mit PHP 1</h1>
+    <form action="form.php" method="post">
+        <p>
+            <label for="name">Ihr Name</label>
+            <input type="text" id="name" name="name" />
+        </p>
+        <p>
+            <label for="name">Ihr Alter</label>
+            <input type="text" id="age" name="age" />
+        </p>
+        <p>
+            <label for="name">Ihr Lieblingsessen</label>
+            <select id="food" name="food">
+                <option value="Pizza">Pizza</option>
+                <option value="Kartoffelbrei">Kartoffelbrei</option>
+                <option value="Suppe">Suppe</option>
+                <option value="Äpfel">Äpfel</option>
+                <option value="Gesundes">Gesundes</option>
+                <option value="Ungesundes">Ungesundes</option>
+                <option value="Nichts">Nichts</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Los, abschicken!" />
+        </p>
+    </form>
+</body>
+
+</html>
