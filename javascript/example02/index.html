@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript I</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+<div id="buttons">
+    <input type="button" onclick="makeSquare()" value="Zum Quadrat">
+    <input type="button" onclick="makeCircle()" value="Zum Kreis">
+    <input type="button" onclick="makeOrange()" value="Orange">
+    <input type="button" onclick="makeBlue()" value="Blau">
+    <input type="button" onclick="makeBigText()" value="Gross">
+    <input type="button" onclick="makeSmallText()" value="Klein">
+    <input type="button" onclick="makeFadeOut()" value="FadeOut">
+    <input type="button" onclick="makeFadeIn()" value="FadeIn">
+</div>
+
+<div id="my-area">
+    FOOBAR
+</div>
+</body>
+
+<script>
+    let div = document.getElementById('my-area');
+
+    function makeSquare()
+    {
+        div.style.width = '400px';
+        div.style.height = '400px';
+        div.style.borderRadius = '0px';
+    }
+
+    function makeCircle()
+    {
+        div.style.width = '400px';
+        div.style.height = '400px';
+        div.style.borderRadius = '400px';
+    }
+
+    function makeOrange()
+    {
+        div.style.backgroundColor = '#ff6600';
+    }
+
+    function makeBlue()
+    {
+        div.style.backgroundColor = '#336699';
+    }
+
+    function makeBigText()
+    {
+        div.style.fontSize = '30px';
+    }
+
+    function makeSmallText()
+    {
+        div.style.fontSize = '6px';
+    }
+
+    function makeFadeIn()
+    {
+        let opacity = 0; // Initial opacity
+        let interval = setInterval(function() {
+            if (opacity < 1) {
+                opacity += 0.1;
+                div.style.opacity = opacity;
+            } else {
+                clearInterval(interval); // Stop the interval when opacity reaches 1
+            }
+        }, 50);
+    }
+
+    function makeFadeOut()
+    {
+        let opacity = 1; // Initial opacity
+        let interval = setInterval(function() {
+            if (opacity > 0) {
+                opacity -= 0.1;
+                div.style.opacity = opacity;
+            } else {
+                clearInterval(interval); // Stop the interval when opacity reaches 0
+            }
+        }, 50);
+    }
+
+</script>
+
+<style>
+    #buttons {
+        text-align: center;
+    }
+
+    #my-area {
+        margin: auto;
+        margin-top: 15px;
+        background-color: #336699;
+        height: 400px;
+        width: 300px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+    }
+</style>
+
+</html>
