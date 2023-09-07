@@ -1,2 +1,2 @@
 # workshop-2023
-PHP examples for workshop.
+JavaScript and PHP examples for workshop.
