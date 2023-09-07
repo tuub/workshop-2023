@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript III</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+<h1>JavaScript III</h1>
+<div id="buttons">
+    <input type="button" id="toggle-rotation" value="Start / Stop">
+</div>
+
+<div id="my-area">
+    FOOBAR
+</div>
+</body>
+
+<script>
+    let div = document.getElementById('my-area');
+    let toggleBtn = document.getElementById('toggle-rotation');
+    let isRotating = false;
+    let runner;
+    let degrees = 0;
+
+    function startRotation () {
+        runner = setInterval(function() {
+            degrees++;
+            div.style.transform = 'rotate(' + degrees + 'deg)';
+        }, 10)
+    }
+
+    function stopRotation () {
+        clearInterval(runner);
+    }
+
+    toggleBtn.addEventListener('click', function(){
+        if (!isRotating){
+            isRotating = true;
+            startRotation();
+        } else {
+            isRotating = false;
+            stopRotation();
+        }
+    })
+</script>
+
+<style>
+    #buttons {
+        text-align: center;
+    }
+
+    #my-area {
+        margin: auto;
+        margin-top: 75px;
+        background-color: #336699;
+        height: 300px;
+        width: 300px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+    }
+</style>
+
+</html>
