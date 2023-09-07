@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript III</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+<h1>JavaScript IV</h1>
+
+<div id="buttons">
+    <input type="button" id="get-image" onclick="getImageFromApi()" value="Zufallsbild laden">
+</div>
+</body>
+
+<script>
+    let div = document.querySelector('body');
+
+function getImageFromApi()
+{
+    const imageUrl = 'https://picsum.photos/' + window.innerWidth + '/' + window.innerHeight;
+    const image = fetch(imageUrl);
+    image.then(function (response) {
+        div.style.background = 'url('+response.url+')';
+    })
+}
+</script>
+
+<style>
+    body {
+        transition: background 0.5s linear;
+    }
+    #buttons {
+        text-align: center;
+    }
+</style>
+
+</html>
