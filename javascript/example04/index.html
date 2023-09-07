@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>JavaScript III</title>
+    <title>JavaScript IV</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
 </head>
@@ -11,29 +11,45 @@
 <h1>JavaScript IV</h1>
 
 <div id="buttons">
-    <input type="button" id="get-image" onclick="getImageFromApi()" value="Zufallsbild laden">
+    <input type="button" id="get-image" onclick="getImageFromApi()" value="Zufallsbild von API">
+    <input type="button" id="get-data" onclick="getDataFromApi()" value="Zufallstext von Wikipedia">
 </div>
+<div id="content"></div>
 </body>
 
 <script>
-    let div = document.querySelector('body');
+    let bodyElement = document.querySelector('body');
+    let contentDiv = document.getElementById('content');
 
-function getImageFromApi()
-{
-    const imageUrl = 'https://picsum.photos/' + window.innerWidth + '/' + window.innerHeight;
-    const image = fetch(imageUrl);
-    image.then(function (response) {
-        div.style.background = 'url('+response.url+')';
-    })
-}
+    function getImageFromApi()
+    {
+        const apiUrl = 'https://picsum.photos/' + window.innerWidth + '/' + window.innerHeight;
+        const image = fetch(apiUrl);
+        image.then(function (response) {
+            bodyElement.style.background = 'url('+response.url+')';
+        })
+    }
+
+    function getDataFromApi()
+    {
+        const apiUrl = 'https://de.wikipedia.org/api/rest_v1/page/random/summary';
+        const wikipediaText = fetch(apiUrl);
+        wikipediaText.then(async function (response) {
+            const text = await response.json();
+            contentDiv.innerText = text.extract;
+        })
+    }
 </script>
 
 <style>
-    body {
-        transition: background 0.5s linear;
-    }
     #buttons {
         text-align: center;
+    }
+    #content {
+        width: 98%;
+        margin: 25px auto auto;
+        background-color: #fff;
+        padding: 10px;
     }
 </style>
 
