@@ -1,0 +1,22 @@
+{
+    "name": "fab/example04",
+    "type": "project",
+    "require": {
+        "catfan/medoo": "^2.1",
+        "fzaninotto/faker": "^1.5"
+    },
+    "require-dev": {
+        "monolog/monolog": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Library\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fab Fuerste",
+            "email": "fabian.fuerste@tu-berlin.de"
+        }
+    ]
+}
