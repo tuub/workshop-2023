@@ -1,0 +1,21 @@
+{
+    "name": "fab/example06",
+    "type": "project",
+    "require-dev": {
+        "monolog/monolog": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Library\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fab Fuerste",
+            "email": "fabian.fuerste@tu-berlin.de"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}
