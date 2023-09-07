@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript I</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+<input type="button" onclick="sayHello()" value="Hallo Computer">
+<input type="button" onclick="sayPersonalHello()" value="Stell Dich vor">
+<input type="button" onclick="writeToConsole()" value="Schreib in die Konsole">
+</body>
+
+<script>
+    function sayHello()
+    {
+        alert('Hallo zurück');
+    }
+
+    function sayPersonalHello()
+    {
+        let name = prompt('Wie ist Ihr Name?');
+        alert('Hallo ' + name + '!');
+    }
+
+    function writeToConsole()
+    {
+        console.log('Hallo aus der Konsole!');
+    }
+</script>
+
+</html>
