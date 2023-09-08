@@ -10,7 +10,7 @@
 <body>
     <h1>PHP II</h1>
     <p>Wie lautet ein Name rückwärts?</p>
-    <form action="index.php" method="get">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
         <p>
             <label for="name">Ihr Name</label>
             <input type="text" id="name" name="name" />

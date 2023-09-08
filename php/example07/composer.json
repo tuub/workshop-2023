@@ -1,8 +1,8 @@
 {
-    "name": "fab/example05",
+    "name": "fab/example07",
     "type": "project",
-    "require": {
-        "catfan/medoo": "^2.1"
+    "require-dev": {
+        "monolog/monolog": "^3.4"
     },
     "autoload": {
         "psr-4": {
@@ -14,5 +14,8 @@
             "name": "Fab Fuerste",
             "email": "fabian.fuerste@tu-berlin.de"
         }
-    ]
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
 }

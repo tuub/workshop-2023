@@ -8,10 +8,6 @@ require 'vendor/autoload.php';
 
 // Datenbank verbinden
 use Medoo\Medoo;
-use Faker\Factory;
-
-// Faker initialiseren
-$faker = Factory::create();
 
 $database = 'data/database.db';
 
@@ -20,12 +16,8 @@ $db = new Medoo([
     'database' => $database,
 ]);
 
-// Formulardaten in Datenbank speichern
-$db->insert('songs', [
-    'artist' => $faker->name,
-    'title' => $faker->realText(35),
-    'duration' => $faker->randomDigitNotNull
-]);
+// Alle Daten aus Datenbank löschen
+$db->delete('songs', []);
 
 // Auf vorherige Seite umleiten
 header("Location: index.php");

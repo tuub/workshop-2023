@@ -21,6 +21,9 @@
         'Susanne',
     ];
 
+    // Sortierung in 2. Schritt
+    sort($names);
+
     foreach ($names as $name) {
         print 'Hallo, ' . $name . '!<br/>';
     }
