@@ -10,30 +10,80 @@
 <body>
 <h1>JavaScript V</h1>
 
-<div id="buttons">
-    <input type="button" id="get-image" onclick="getImageFromApi()" value="Zufallsbild laden">
-</div>
+<p>
+    Clientseitige Formularvalidierung.
+</p>
+
+<form id="form" action="/" method="GET">
+    <div>
+        <label for="username">Name:</label>
+        <input type="text" name="username" id="username" autofocus required />
+    </div>
+    <div>
+        <label for="password">Passwort:</label>
+        <input type="password" name="password" id="password" required />
+    </div>
+
+    <div>
+        <label for="password-confirm">Confirm Password: </label>
+        <input type="password" name="password-confirm" id="password-confirm" required />
+    </div>
+
+    <button type="submit">Prüfen und absenden</button>
+</form>
+
+<div id="form-errors">Keine Fehler.</div>
 </body>
 
 <script>
-    let div = document.querySelector('body');
+    // Referenzen auf DOM-Elemente werden in Variablen gespeichert
+    const form = document.querySelector('#form');
+    const errorDiv = document.querySelector('#form-errors');
+    const username = document.querySelector('#username');
+    const password = document.querySelector('#password');
+    const passwordConfirm = document.querySelector('#password-confirm');
 
-function getDataFromApi()
-{
-    const imageUrl = 'https://picsum.photos/' + window.innerWidth + '/' + window.innerHeight;
-    const image = fetch(imageUrl);
-    image.then(function (response) {
-        div.style.background = 'url('+response.url+')';
+    // EventListener wird auf den Form-Submit registriert
+    form.addEventListener('submit', (form) => {
+        // Variable für Fehlertexte
+        let errorString = '';
+
+        // 1. Check: Der erste Buchstabe im Namen soll ein Großbuchstabe sein
+        const firstLetter = username.value[0];
+        const firstLetterIsUpperCase = (firstLetter === firstLetter.toUpperCase());
+        if (!firstLetterIsUpperCase) {
+            errorString += 'Der erste Buchstabe des Namens muss ein Großbuchstabe sein.\n';
+        }
+
+        // 2. Check: Im Passwort soll eine Zahl enthalten sein
+        const usernameIncludesDigit = /\d/.test(password.value);
+        if (!usernameIncludesDigit) {
+            errorString += 'Passwort muss mindestens eine Zahl enthalten..\n';
+        }
+
+        // 3. Check Beide Passwörter sollen übereinstimmen
+        if (password.value !== passwordConfirm.value) {
+            errorString += 'Die beiden Passwörter stimmen nicht überein.\n';
+        }
+
+        // Prüfen, ob die Variable errorString etwas enthält.
+        // Falls ja: Das Folgende ausführen
+        // Falls nein: Formular wird abgesendet
+        if (errorString !== "") {
+            // Zuweisung des Variableninhalts an DOM-Element errorDiv
+            errorDiv.innerText = errorString;
+            // Ändern der Textfarbe zu ROT im DOM-Element errorDiv
+            errorDiv.style.color = 'red';
+            // Absenden des Formulars verhindern
+            form.preventDefault();
+        }
     })
-}
+
 </script>
 
 <style>
-    body {
-        transition: background 0.5s linear;
-    }
-    #buttons {
-        text-align: center;
+    #form-errors {
+        margin-top: 10px;
     }
 </style>
 
