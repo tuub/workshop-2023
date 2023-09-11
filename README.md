@@ -1,5 +1,25 @@
 # workshop-2023
-JavaScript and PHP examples for workshop.
+Beispiele für Workshop
+
+# Inhalte
+
+## JavaScript
+
+1. <a href="javascript/example01/">Einfache Funktionen</a>
+2. <a href="javascript/example02/">Änderungen im DOM I</a>
+3. <a href="javascript/example03/">Änderungen im DOM II</a>
+4. <a href="javascript/example04/">Aufruf von externen APIs</a>
+5. <a href="javascript/example05/">Clientseitige Formularvalidierung</a>
+
+## PHP
+
+1. <a href="php/example01/">Einfache Liste und Loop</a>
+2. <a href="php/example02/">Einfaches Formular</a>
+3. <a href="php/example03/">Größeres Formular</a>
+4. <a href="php/example04/">Datenbankzugriff</a>
+5. <a href="php/example05/">Datenbankzugriff mit externer Progammbibliothek</a>
+6. <a href="php/example06/">Generierung von Datenbankeinträgen mit externer Progammbibliothek</a>
+7. <a href="php/example07/">Aufruf von externer API</a>
 
 # Installation
 
