@@ -21,6 +21,15 @@ Beispiele für Workshop
 6. <a href="php/example06/">Generierung von Datenbankeinträgen mit externer Progammbibliothek</a>
 7. <a href="php/example07/">Aufruf von externer API</a>
 
+## JavaScript & PHP
+
+1. <a href="javascript+php/example01/">Ajax: Marvel-Charaktere</a>
+
+## Security
+
+1. <a href="security/example01/">Script Injection</a>
+2. <a href="security/example02/">SQL Injection</a>
+
 # Installation
 
 Die Anleitung setzt ein Ubuntu Linux 22.04 voraus. Falls nicht vorhanden, kann das System über VirtualBox leicht virtuell aufgesetzt werden. 
