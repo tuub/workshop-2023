@@ -7,8 +7,6 @@ ini_set('display_errors', true);
 $database = 'data/database.db';
 $db = new PDO('sqlite:' . $database);
 
-
-
 // Daten eintragen
 $sql = 'INSERT INTO songs(artist, title, duration) VALUES(:artist, :title, :duration)';
 $stmt = $db->prepare($sql);
