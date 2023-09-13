@@ -3,6 +3,10 @@ Beispiele für Workshop
 
 # Inhalte
 
+## Shell
+
+1. <a href="shell/example01/">Automatisierung</a>
+
 ## JavaScript
 
 1. <a href="javascript/example01/">Einfache Funktionen</a>
