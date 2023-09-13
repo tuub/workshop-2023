@@ -1,11 +1,13 @@
 <?php
+// Fehlermeldungen anzeigen
+error_reporting(E_ALL);
+ini_set('display_errors', true);
+
 // Datenbank verbinden
 $database = 'data/database.db';
 $db = new PDO('sqlite:' . $database);
 
-// Fehlermeldungen anzeigen
-error_reporting(E_ALL);
-ini_set('display_errors', true);
+
 
 // Daten eintragen
 $sql = 'INSERT INTO songs(artist, title, duration) VALUES(:artist, :title, :duration)';

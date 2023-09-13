@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Javascript + PHP</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+<h1>Javascript + PHP</h1>
+
+<p>Wir durchsuchen das Marvel-Universum und senden dafür mit JavaScript eine Ajax-Anfrage an ein PHP-Script.</p>
+
+<form action="">
+    <label for="query">Marvel-Charakter:</label>
+    <input type="text" id="query" name="query" onkeyup="showMarvelHint(this.value)">
+</form>
+<p>Treffer: <span id="marvelHint"></span></p>
+</body>
+
+<script>
+    function showMarvelHint(query) {
+        if (query.length === 0) {
+            document.getElementById('marvelHint').innerHTML = '';
+        } else {
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById('marvelHint').innerHTML = this.responseText;
+                }
+            };
+            xmlHttp.open('GET', "get_marvel.php?query=" + query, true);
+            xmlHttp.send();
+        }
+    }
+</script>
+
+</html>
