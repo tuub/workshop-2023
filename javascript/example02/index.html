@@ -14,8 +14,9 @@
     <input type="button" onclick="makeCircle()" value="Zum Kreis">
     <input type="button" onclick="makeOrange()" value="Orange">
     <input type="button" onclick="makeBlue()" value="Blau">
-    <input type="button" onclick="makeBigText()" value="Gross">
-    <input type="button" onclick="makeSmallText()" value="Klein">
+    <input type="button" onclick="makeBigText()" value="Grosser Text">
+    <input type="button" onclick="makeRegularText()" value="Normaler Text">
+    <input type="button" onclick="makeSmallText()" value="Kleiner Text">
     <input type="button" onclick="makeFadeOut()" value="FadeOut">
     <input type="button" onclick="makeFadeIn()" value="FadeIn">
 </div>
@@ -56,6 +57,11 @@
     function makeBigText()
     {
         div.style.fontSize = '30px';
+    }
+
+    function makeRegularText()
+    {
+        div.style.fontSize = '16px';
     }
 
     function makeSmallText()
@@ -104,7 +110,7 @@
         width: 300px;
         line-height: 300px;
         color: #fff;
-        font-size: 12px;
+        font-size: 16px;
         text-align: center;
     }
 
