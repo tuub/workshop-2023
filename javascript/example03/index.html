@@ -11,6 +11,7 @@
 <h1>JavaScript III</h1>
 <div id="buttons">
     <input type="button" id="toggle-rotation" value="Start / Stop">
+    <input type="button" id="toggle-direction" value="Rückwärts">
 </div>
 
 <div id="my-area">
@@ -20,31 +21,57 @@
 
 <script>
     let div = document.getElementById('my-area');
-    let toggleBtn = document.getElementById('toggle-rotation');
+
+    let toggleRotationBtn = document.getElementById('toggle-rotation');
+    let toggleDirectionBtn = document.getElementById('toggle-direction');
+
     let isRotating = false;
+    let isRotatingForward = true;
+
     let runner;
     let degrees = 0;
 
     function startRotation () {
         runner = setInterval(function() {
             degrees++;
-            div.style.transform = 'rotate(' + degrees + 'deg)';
+
+            let modifier = '+';
+            if (!isRotatingForward) {
+                modifier = '-';
+            }
+
+            div.style.transform = 'rotate(' + modifier + degrees + 'deg)';
         }, 10)
+        isRotating = true;
     }
 
     function stopRotation () {
         clearInterval(runner);
+        isRotating = false;
     }
 
-    toggleBtn.addEventListener('click', function(){
-        if (!isRotating){
-            isRotating = true;
+    toggleRotationBtn.addEventListener('click', function() {
+        if (!isRotating) {
             startRotation();
         } else {
-            isRotating = false;
             stopRotation();
         }
     })
+
+    toggleDirectionBtn.addEventListener('click', function() {
+        stopRotation();
+
+        if (isRotatingForward === true) {
+            isRotatingForward = false;
+            toggleDirectionBtn.value = 'Vorwärts';
+        } else {
+            isRotatingForward = true;
+            toggleDirectionBtn.value = 'Rückwärts';
+        }
+
+        startRotation()
+    })
+
 </script>
 
 <style>
