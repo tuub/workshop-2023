@@ -3,9 +3,19 @@ Beispiele für Workshop
 
 # Inhalte
 
-## Shell
+## HTML
 
-1. <a href="shell/example01/">Automatisierung</a>
+1. <a href="html/example01/">Einfacher Text mit Bild</a>
+2. <a href="html/example02/">Listen</a>
+3. <a href="html/example03/">Tabellen</a>
+4. <a href="html/example04/">Verschiedenes</a>
+
+## CSS
+
+1. <a href="css/example01/">Einfacher Text mit Bild</a>
+2. <a href="css/example02/">Listen</a>
+3. <a href="css/example03/">Tabellen</a>
+4. <a href="css/example04/">Verschiedenes</a>
 
 ## JavaScript
 
@@ -33,6 +43,10 @@ Beispiele für Workshop
 
 1. <a href="security/example01/">Script Injection</a>
 2. <a href="security/example02/">SQL Injection</a>
+
+## Shell
+
+1. <a href="shell/example01/">Automatisierung</a>
 
 # Installation
 
