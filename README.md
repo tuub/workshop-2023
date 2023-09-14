@@ -53,12 +53,13 @@ Beispiele für Workshop
 Die Anleitung setzt ein Ubuntu Linux 22.04 voraus. Falls nicht vorhanden, kann das System über VirtualBox leicht virtuell aufgesetzt werden. 
 
 ## Programmpakete installieren
+Im Terminal:
 ```
 sudo apt install apache2 git php curl libapache2-mod-php php-sqlite3 composer
 ```
 
 ## Editor "Visual Studio Code" installieren
-
+Im Terminal:
 ```
 sudo snap install --classic code
 ```
@@ -67,8 +68,10 @@ sudo snap install --classic code
 2. `Clone Repository` wählen
 3. `https://github.com/tuub/workshop-2023` eintragen
 4. `Desktop` als Speicherort angeben
+5. `Öffnen` wählen
 
 ## Verzeichnis für Webserver-Zugriff einstellen
+Im Terminal:
 ```
 # Den Webserver-User zur eigenen Usergruppe hinzufügen
 sudo adduser www-data $USER
@@ -80,6 +83,7 @@ sudo adduser www-data $USER
 2. `DocumentRoot` anpassen: `<USER>` mit eigenem Usernamen ersetzen
 
 ## Webserver-Konfiguration laden
+Im Terminal:
 ```
 # Bearbeitete Webserver-Konfiguration an die richtige Stelle im System kopieren
 sudo cp /home/$USER/Desktop/workshop-2023/apache2.conf /etc/apache2/sites-available/000-default.conf
